@@ -1,44 +1,20 @@
-import React, {useState} from "react";
-import './App.css';
-import NewPage from './Pages/NewPage';
-import HomePage from "./Pages/HomePage";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./Pages/homepage";
+import NewPage from "./Pages/newpage";
 
 function App() {
-    const [likes, setLikes] = useState(0);
-
-    function Increment() {
-        setLikes(likes + 1);
-        console.log(likes);
-    }
-
-    function Decrement() {
-        setLikes(likes - 1);
-        console.log(likes);
-    }
-
-    return (<div className="App">
-            <h1>{likes}</h1>
-            <h2>Test</h2>
-            <div style={{
-                backgroundColor: 'red',
-                margin: '20px',
-                padding: '50px',
-                textAlign: 'center',
-                bottom: 0,
-                flexDirection: 'column',
-                flex: 1
-            }}>
-                <button onClick={Increment}
-                        style={{color: 'black', borderRadius: '5px', height: '50px', width: '300px'}}>Increment
-                </button>
-                <button onClick={Decrement}
-                        style={{color: 'black', borderRadius: '5px', height: '50px', width: '300px'}}>Decrement
-                </button>
-
-                <NewPage/> {/* Use capital letter for component names */}
-                <HomePage/> {/* Use capital letter for component names */}
-            </div>
-        </div>);
+    return (
+        <div>
+            <header>
+                <h2><link rel="stylesheet" href="/newpage" />NewPage</h2>
+            </header>
+            <Routes>
+                <Route path="/newpage" element={<NewPage />} />
+                <Route path="/" element={<HomePage />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

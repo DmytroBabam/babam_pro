@@ -1,25 +1,17 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import HomePage from "./HomePage";
-import NewPage from "./NewPage";
-import NotFoundPage from "./NotFoundPage"; // Импортируйте компонент NotFoundPage
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/homepage";
+import NewPage from "./pages/newpage";
+import NotFoundPage from "./pages/notfoundpage";
 
-function Routes() {
+function App() {
     return (
-        <Router>
-            <Switch>
-                <Route path="/newpage">
-                    <NewPage />
-                </Route>
-                <Route exact path="/">
-                    <HomePage />
-                </Route>
-                <Route>
-                    <NotFoundPage /> {/* Этот маршрут будет срабатывать, если не совпадает ни один другой маршрут */}
-                </Route>
-            </Switch>
-        </Router>
+        <Routes>
+            <Route path="/newpage" element={<NewPage />} />
+            <Route index element={<HomePage />} />
+            <Route path="*" element={<NotFoundPage />} />
+        </Routes>
     );
 }
 
-export default Routes;
+export default App;
