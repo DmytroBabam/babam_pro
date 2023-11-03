@@ -1,20 +1,16 @@
 import React, {useState} from "react";
+import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import newpage from './Pages/newpage';
+import homepage from "./Pages/homepage";
 
 function App() {
     const [likes, setLikes] = useState(0)
 
     function Increment() {
         setLikes(likes + 1)
-        const numberX = Number(1)
-        const numberY = Number(1)
 
-
-//......
-
-
-        let whoLikes = numberX === numberY ? 'Likes' : 'not likes'
-        console.log("Dima " + (whoLikes || "hiiiii") + ' Kenan')
-
+        console.log(likes);
     }
 
     function Decrement() {
@@ -23,8 +19,8 @@ function App() {
         console.log(likes);
     }
 
-    return (
-        <div className="App">
+
+    return (<div className="App">
 
             <h1>{likes}</h1>
             <h2>Test</h2>
@@ -37,15 +33,23 @@ function App() {
                 flexDirection: 'column',
                 flex: 1
             }}>
+
                 <button onClick={Increment}
-                        style={{color: 'green', borderRadius: '5px', height: '50px', width: '300px'}}>Increment
+                        style={{
+                            color: 'black',
+                            borderRadius: '5px', height: '50px', width: '300px'
+                        }}>Increment
                 </button>
-                <button onClick={Decrement} style={{color: 'red', borderRadius: '5px'}}>Decrement</button>
+                <button onClick={Decrement}
+                        style={{color: 'black', borderRadius: '5px', height: '50px', width: '300px'}}>Decrement
+                </button>
 
+                <AboutUs/>
+                {/* More Information about our Site */}
             </div>
-
-
         </div>
+
+
     );
 }
 
