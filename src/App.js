@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React , {useState} from "react";
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import newpage from './Pages/newpage';
-import homepage from "./Pages/homepage";
+// import newpage from './Pages/newpage';
+// import homepage from "./Pages/homepage";
 
 function App() {
     const [likes, setLikes] = useState(0)
@@ -14,11 +13,9 @@ function App() {
     }
 
     function Decrement() {
-
         setLikes(likes - 1)
         console.log(likes);
     }
-
 
     return (<div className="App">
 
@@ -44,7 +41,8 @@ function App() {
                         style={{color: 'black', borderRadius: '5px', height: '50px', width: '300px'}}>Decrement
                 </button>
 
-                <AboutUs/>
+                <newpage />
+                <homepage />
                 {/* More Information about our Site */}
             </div>
         </div>
