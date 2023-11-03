@@ -1,15 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from "./App"
-import Kenan from "./Kenan"
+import App from './App';
 
 ReactDOM.render(
-  <App/>,
-    document.getElementById('dima')
-
-);
-ReactDOM.render(
-  <Kenan/>,
-    document.getElementById('kenan')
-
+    <App />,
+    document.getElementById('root')
 );
